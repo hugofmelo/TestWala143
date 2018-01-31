@@ -18,6 +18,7 @@ public class Example {
 			e.printStackTrace();
 		}
 		
+		/*
 		t = new B();
 		t.m1();
 		
@@ -31,6 +32,7 @@ public class Example {
 		{
 			e.printStackTrace();
 		}
+		*/
 	}
 
 }

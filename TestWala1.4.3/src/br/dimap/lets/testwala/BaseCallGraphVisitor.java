@@ -9,6 +9,7 @@ import java.util.Stack;
 
 import com.ibm.wala.ipa.callgraph.CGNode;
 import com.ibm.wala.ipa.callgraph.CallGraph;
+import com.ibm.wala.ipa.cha.IClassHierarchy;
 
 public abstract class BaseCallGraphVisitor
 {
@@ -63,6 +64,11 @@ public abstract class BaseCallGraphVisitor
 		{
 			return state;
 		}
+	}
+	
+	protected IClassHierarchy getClassHierarchy ()
+	{
+		return this.callGraph.getClassHierarchy();
 	}
 	
 	public abstract void preVisit(CGNode node);

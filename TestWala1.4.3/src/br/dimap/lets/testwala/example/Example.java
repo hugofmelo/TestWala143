@@ -9,15 +9,8 @@ public class Example {
 		
 		t = new A();
 		
-		try
-		{
-			t.m1();
-		}
-		catch (RuntimeException e)
-		{
-			e.printStackTrace();
-		}
-		
+		t.m1();
+		//t.m2();
 		/*
 		t = new B();
 		t.m1();

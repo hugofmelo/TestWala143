@@ -63,7 +63,7 @@ public class Main
 	    
 		
 		CallGraphVisitor visitor = new CallGraphVisitor(callGraph);
-		visitor.accept(callGraph.getFakeRootNode());
+		visitor.accept(callGraph.getEntrypointNodes().iterator().next());
 		
 		/*
 		CGNode node = callGraph.getFakeRootNode();
@@ -72,8 +72,8 @@ public class Main
 		System.out.println(node.getMethod().getSignature());
 		*/
 		
-		//ExceptionAnalysis exceptionAnalysis = new ExceptionAnalysis(callGraph, builder.getPointerAnalysis(), classHierarchy);
-		
+		ExceptionAnalysis exceptionAnalysis = new ExceptionAnalysis(callGraph, builder.getPointerAnalysis(), classHierarchy);
+		exceptionAnalysis.
 		
 		/*
 		//Set<CGNode> nodes = DFS.getReachableNodes(callGraph);

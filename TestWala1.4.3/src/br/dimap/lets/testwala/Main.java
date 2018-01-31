@@ -48,14 +48,14 @@ public class Main
 		AnalysisOptions options = new AnalysisOptions(analysisScope, entrypoints);
 		//options.setReflectionOptions(AnalysisOptions.ReflectionOptions.FULL);
 
-		Util.addDefaultSelectors(options, classHierarchy);
-		Util.addDefaultBypassLogic(options, analysisScope, Util.class.getClassLoader(), classHierarchy);
+		//Util.addDefaultSelectors(options, classHierarchy);
+		//Util.addDefaultBypassLogic(options, analysisScope, Util.class.getClassLoader(), classHierarchy);
 
 		// builder com sensibilidade ao contexto na sinalização de exceções.
 		AnalysisCache cache = new AnalysisCacheImpl();
 		SSAPropagationCallGraphBuilder builder = Util.makeNCFABuilder(1, options, cache, classHierarchy, analysisScope);
-		//SSAPropagationCallGraphBuilder builder = new nCFABuilder(1,classHierarchy,options,cache,null,null);
-
+		//SSAPropagationCallGraphBuilder builder = Util.makeVanillaNCFABuilder(1, options, cache, classHierarchy, analysisScope);
+		
 		CallGraph callGraph = builder.makeCallGraph(options,null);
 		
 		System.err.println(CallGraphStats.getStats(callGraph));
